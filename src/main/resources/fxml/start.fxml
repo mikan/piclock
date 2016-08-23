@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="wrapper" spacing="10.0" stylesheets="@../styles/qvga.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tasktoys.piclock.StartController" onMouseClicked="#onWrapperClicked">
+    <children>
+        <Label fx:id="title" text="PiClock v1.0" />
+        <Separator prefWidth="Infinity" />
+        <Button fx:id="clockButton" mnemonicParsing="false" text="Clock" onMouseClicked="#onClockClicked" />
+        <Separator prefWidth="Infinity" />
+        <DatePicker fx:id="countdownDatePicker" />
+        <Button fx:id="countdownButton" mnemonicParsing="false" text="Countdown" onMouseClicked="#onCountdownClicked" />
+    </children>
+</VBox>
