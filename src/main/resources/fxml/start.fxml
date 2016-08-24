@@ -15,7 +15,7 @@
         <Separator prefWidth="Infinity" />
         <DatePicker fx:id="countdownDatePicker" />
         <Button fx:id="countdownButton" mnemonicParsing="false" onMouseClicked="#onCountdownClicked" text="Countdown" />
-      <Separator prefWidth="200.0" />
+      <Separator prefWidth="Infinity" />
       <Label fx:id="statusLabel" />
     </children>
 </VBox>
