@@ -7,13 +7,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="wrapper" spacing="10.0" stylesheets="@../styles/qvga.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tasktoys.piclock.StartController" onMouseClicked="#onWrapperClicked">
+<VBox fx:id="wrapper" onMouseClicked="#onWrapperClicked" spacing="10.0" stylesheets="@../styles/qvga.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tasktoys.piclock.StartController">
     <children>
         <Label fx:id="title" text="PiClock v1.0" />
         <Separator prefWidth="Infinity" />
-        <Button fx:id="clockButton" mnemonicParsing="false" text="Clock" onMouseClicked="#onClockClicked" />
+        <Button fx:id="clockButton" mnemonicParsing="false" onMouseClicked="#onClockClicked" text="Clock" />
         <Separator prefWidth="Infinity" />
         <DatePicker fx:id="countdownDatePicker" />
-        <Button fx:id="countdownButton" mnemonicParsing="false" text="Countdown" onMouseClicked="#onCountdownClicked" />
+        <Button fx:id="countdownButton" mnemonicParsing="false" onMouseClicked="#onCountdownClicked" text="Countdown" />
+      <Separator prefWidth="200.0" />
+      <Label fx:id="statusLabel" />
     </children>
 </VBox>

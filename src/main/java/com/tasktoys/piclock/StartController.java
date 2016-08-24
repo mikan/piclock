@@ -15,7 +15,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.checkerframework.checker.nullness.qual.NonNull;
 
+import java.net.InetAddress;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -40,6 +42,7 @@ public class StartController implements Initializable {
     public Button countdownButton;
     @FXML
     public Label title;
+    public Label statusLabel;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -49,6 +52,14 @@ public class StartController implements Initializable {
         countdownDatePicker.setConverter(new DateFormatConverter(PATTERN));
         countdownDatePicker.setPromptText("2016/11/30");
         countdownButton.requestFocus();
+
+        // Setup status label.
+        try {
+            statusLabel.setText(InetAddress.getLocalHost().toString());
+        } catch (UnknownHostException e) {
+            log.throwing(StartController.class.getName(), "initialize", e);
+            statusLabel.setText("[ERROR] " + e.getMessage());
+        }
 
         log.info(StartController.class.getSimpleName() + " initialized.");
     }
